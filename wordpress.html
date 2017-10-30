@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/css.css">
+  </head>
+<body>
+  <div class="page-container">
+    <!-- EMPIEZA EL MENU -->
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="mysql.html">PHP-MySQL</a></li>
+          <li><a class="brand" href="wordpress.html">WordPress</a></li>
+          <li><a href="owncloud.html">OwnCloud</a></li>
+          <li><a href="prestashop.html">PrestaShop</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  <!-- ACABA EL MENU -->
+  
+  <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <!-- EMPIEZA EL CUERPO -->
+  <div class="cuerpo">
+    <!-- BOTONES PARA MOSTRAR EL CONTENIDO DEL TEMA -->
+    
+    <ul>
+      <li><a onclick="ocultarQueEs()" href="#">QueEs</a></li>
+      <li><a onclick="ocultarParaQueSirve()" href="#">ParaQueSirve</a></li>
+      <li><a onclick="ocultarInstalacion()" href="#">Instalacion</a></li>
+      <li><a onclick="EnseñarTodo()" href="#">Mostrar todo el tutorial</a></li>
+    </ul>
+
+    <img id="logo"  class="logo" src="imagenes/Wordpress/logo.png">
+
+
+    <!-- ¿QUÉ ES? -->
+    <div  id="QueEs" class="oculto">
+    <h2>¿QUÉ ES?</h2>
+    <p>Es un sistema de gestión de contenidos (CSM) que permite crear y mantener un blog u otro tipo de web. Es un sistema ideal para un sitio web que se actualiza periodicamente. Si se escribe contenido con cierta frecuencia, cuando alguien accede al sitio web, puede encontrar todos esos contenidos ordenados cronologicamente.</p>
+    </div>
+    
+    
+    <div id="ParaQueSirve" class="oculto">
+    <!-- ¿PARA QUÉ SIRVE? -->
+    <h2>¿PARA QUÉ SIRVE?</h2>
+    <ol>
+      <li>BLOG</li>
+      <li>WEBS EMPRESARIALES</li>
+      <li>TIENDAS ONLINE</li>
+      <li>PERIÓDICO DIGITAL</li>
+      <li>CENTRAL DE RESERVAS</li>
+    </ol>
+    </div>
+    
+    <!-- ¿PARA QUÉ SIRVE? -->
+    <div  id="Instalación" class="oculto">
+      <h2>INSTALACIÓN</h2>
+
+      <p>Entraremos en modo MySQL mediante el comando <code>mysql -u root -p</code> y ahora introduciremos el comando <code>CREATE DATABASE wordpress</code>. Después comprobaremos que se haya creado correctamente con el comando <code>SHOW DATABASES</code>.</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/1.png" alt=""><br>
+
+      <p>Ahora crearemos un usuario para la base de datos con el comando <code>CREATE USER adminwordpress@localhost IDENTIFIED BY ‘admin’</code>.</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/2.png" alt=""><br>
+
+      <p>Ahora le daremos privilegios al usuario creado anteriormente en la base de datos con el comando <code>GRANT ALL PRIVILEGES ON wordpress.* TO adminwordpress@localhost;</code></p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/3.png" alt=""><br>
+
+      <p>Ahora descargaremos el paquete de Wordpress en castellano mediante el comando <code>wget https://es.wordpress.org/wordpress-4.8.2-es_ES.tar.gz</code>.</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/4.png" alt=""><br>
+
+      <p>Ahora introducimos el comando <code>tar xzvf wordpress-4.8.2-es_ES.tar.gz</code> y esperamos a que acabe.</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/5.png" alt=""><br>
+
+      <p>Ahora actualizaremos los repositorios con el comando <code>sudo apt-get update</code> y despues descargaremos los paquetes con los comando <code>apt-get install php7.0-gd</code> y <code>sudo apt-get install libssh2–1-dev libssh2–1</code>.</p><br>
+
+      <p>Un archivo de configuración de ejemplo , que se acerca mucho al que necesitamos, está incluido por defecto. Aunque, necesitamos copiarlo a la localización del archivo de configuración por defecto para que WordPress reconozca al archivo. Lo haremos así: <code>cp wp-config-sample.php wp-config.php</code>.</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/6.png" alt="">
+
+      <p>Ahora que tenemos un archivo de configuración con el que trabajar, lo abriremos con un editor de texto con el comando <code>nano wp-config-php</code>.</p>
+
+      <p>Ahora entraremos en el directorio donde hayamos instalado Wordpress, en nuestro caso escribiremos <code>cd ~/wordpress</code>.</p>
+
+      <p>Ahora entraremos en la IP de nuestro server.</p>
+      <img>
+
+      <p>Rellenamos los campos que nos pide:</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/7.png" alt="">
+
+      <p>Ahora accedemos:</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/8.png" alt="">
+
+      <p>Ahora nos logueamos con el usuario y contraseña que hayamos puesto.</p>
+      <img class="imagenestutorial" src="imagenes/Wordpress/9  .png" alt="">
+    </div>
+
+
+
+  </div>
+  
+
+  <script>
+    function ocultarQueEs(){
+      var x = document.getElementById("QueEs");
+      var z = document.getElementById("logo");
+      if (x.className==="oculto"){
+        x.className="visible";
+        z.className="oculto";
+      }
+      else {
+        x.className="oculto";
+        z.className="oculto";
+      }
+    }
+
+    function ocultarParaQueSirve(){
+      var x = document.getElementById("ParaQueSirve");
+      var z = document.getElementById("logo");
+      if (x.className==="oculto"){
+        x.className="visible";
+        z.className="oculto";
+      }
+      else {
+        x.className="oculto";
+        z.className="oculto";
+      }
+    }
+
+    function ocultarInstalacion(){
+      var x = document.getElementById("Instalación");
+      var z = document.getElementById("logo");
+      if (x.className==="oculto"){
+        x.className="visible";
+        z.className="oculto";
+      }
+      else {
+        x.className="oculto";
+        z.className="oculto";
+      }
+    }
+
+    function EnseñarTodo(){
+      var x = document.getElementById("Instalación");
+      var z = document.getElementById("logo");
+      var t = document.getElementById("ParaQueSirve");
+      var y = document.getElementById("QueEs");
+      
+      x.className="visible";
+      z.className="visible";
+      t.className="visible";
+      y.className="visible";
+       
+    } 
+  </script>
+  <!-- ACABA EL CUERPO -->
+
+
+  </div>
+</body>
+</html>
